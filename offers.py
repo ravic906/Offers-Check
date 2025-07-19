@@ -6,8 +6,12 @@ from discord.ext import commands
 import asyncio
 import time
 
+# Set up Discord intents
+intents = discord.Intents.default()
+intents.message_content = True  # Enable access to message content
+
 # Discord bot setup
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='!', intents=intents)
 TOKEN = '6765'  # Replace with your Discord bot token
 CHANNEL_ID = '1395966273300467814'  # Replace with your Discord channel ID (enable Developer Mode in Discord to copy ID)
 

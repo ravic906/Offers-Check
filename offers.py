@@ -42,7 +42,7 @@ async def main():
                 if x:  # Ensure we found some deals
                     i = x[0]
                     deal_text = i.text.lower()
-                    if ('spoons' in deal_text or 'diaper' in deal_text or 'toothpaste' in deal_text) and i.text != old_text:
+                    if ('indoor' in deal_text or 'diaper' in deal_text or 'toothpaste' in deal_text) and i.text != old_text:
                         old_text = i.text
                         k += 1
                         link = i.find('a').get('href')

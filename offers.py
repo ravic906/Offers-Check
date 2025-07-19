@@ -42,13 +42,13 @@ async def main():
                 if x:  # Ensure we found some deals
                     i = x[0]
                     deal_text = i.text.lower()
-                    if ('indoor' in deal_text or 'diaper' in deal_text or 'toothpaste' in deal_text) and i.text != old_text:
-                        old_text = i.text
-                        k += 1
-                        link = i.find('a').get('href')
-                        message = f"{i.text}\n{link}"
-                        print(f'Scraping a deal for you! Found {k} deal(s)!')
-                        await send_message(message)
+                    #if ('indoor' in deal_text or 'diaper' in deal_text or 'toothpaste' in deal_text) and i.text != old_text:
+                    old_text = i.text
+                    k += 1
+                    link = i.find('a').get('href')
+                    message = f"{i.text}\n{link}"
+                    print(f'Scraping a deal for you! Found {k} deal(s)!')
+                    await send_message(message)
                 else:
                     print('No deals found in this scrape.')
             

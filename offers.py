@@ -34,7 +34,7 @@ async def main():
     while True:
         try:
             # Check every 10 minutes (based on minute value divisible by 10)
-            if int(datetime.now().strftime('%M')) % 10 == 0:
+            if int(datetime.now().strftime('%M')) % 1 == 0:
                 html_doc = requests.get('https://www.desidime.com/new', timeout=10).text
                 bs = BeautifulSoup(html_doc, 'html.parser')
                 x = bs.findAll('div', class_="deal-url", limit=5)
